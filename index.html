@@ -1,1 +1,96 @@
 
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Agro Forte, Futuro Sustentável</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <header class="main-header">
+        <div class="header-container">
+            <div class="logo">
+                <h1>Agro<span>Sustentável</span></h1>
+            </div>
+            <nav class="main-nav">
+                <ul>
+                    <li><a href="#inicio">Início</a></li>
+                    <li><a href="#pilares">Pilares</a></li>
+                    <li><a href="#contato">Contato</a></li>
+                </ul>
+            </nav>
+            <button id="toggle-dark-mode" class="btn-mode" aria-label="Alternar modo escuro">🌙 Modo Escuro</button>
+        </div>
+    </header>
+
+    <main>
+        
+        <section id="inicio" class="hero-section">
+            <div class="hero-content">
+                <h2>Equilíbrio entre Produção e Meio Ambiente</h2>
+                <p>O futuro da agricultura depende da nossa capacidade de inovar respeitando a natureza. Descubra como a tecnologia e a sustentabilidade caminham juntas.</p>
+                <button id="btn-saiba-mais" class="btn-primary">Saiba Mais</button>
+            </div>
+        </section>
+
+        <section class="dynamic-message-section">
+            <div class="container">
+                <div id="mensagem-dia" class="card-mensagem">
+                    </div>
+            </div>
+        </section>
+
+        <section id="pilares" class="pilares-section">
+            <div class="container">
+                <h3 class="section-title">Nossos Pilares</h3>
+                <div class="flex-grid">
+                    <article class="pilar-card">
+                        <img src="https://images.unsplash.com/photo-1625246333195-78d9c38ad451?auto=format&fit=crop&w=400&q=80" alt="Tecnologia no campo">
+                        <h4>Tecnologia Verde</h4>
+                        <p>Uso de drones e sensores para otimizar o uso de água e insumos, reduzindo o impacto ambiental.</p>
+                    </article>
+                    <article class="pilar-card">
+                        <img src="https://images.unsplash.com/photo-1592417817098-8f3d6eb19675?auto=format&fit=crop&w=400&q=80" alt="Plantação jovem">
+                        <h4>Preservação</h4>
+                        <p>Práticas de rotação de culturas e plantio direto que mantêm a saúde do solo e protegem os biomas.</p>
+                    </article>
+                    <article class="pilar-card">
+                        <img src="https://images.unsplash.com/photo-1464226184884-fa280b87c399?auto=format&fit=crop&w=400&q=80" alt="Colheita sustentável">
+                        <h4>Produtividade</h4>
+                        <p>Produzir mais em menos espaço, garantindo a segurança alimentar do planeta com responsabilidade.</p>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <section id="contato" class="contato-section">
+            <div class="container-small">
+                <h3>Junte-se ao Movimento</h3>
+                <p>Receba atualizações sobre práticas agrícolas sustentáveis e inovações do setor.</p>
+                
+                <form id="form-contato" novalidate>
+                    <div class="form-group">
+                        <label for="nome">Nome:</label>
+                        <input type="text" id="nome" placeholder="Digite seu nome completo">
+                    </div>
+                    <div class="form-group">
+                        <label for="email">E-mail:</label>
+                        <input type="email" id="email" placeholder="seu.email@exemplo.com">
+                    </div>
+                    <button type="submit" class="btn-submit">Enviar Inscrição</button>
+                </form>
+                <div id="form-feedback" class="feedback-msg"></div>
+            </div>
+        </section>
+
+    </main>
+
+    <footer class="main-footer">
+        <p>&copy; 2026 Agro Forte, Futuro Sustentável. Todos os direitos reservados.</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

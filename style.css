@@ -1,1 +1,387 @@
+ /* ==========================================================================
+   1. VARIÁVEIS DE CORES (Facilita o Dark Mode)
+   ========================================================================== */
+:root {
+    --bg-primary: #f4f7f5;
+    --bg-card: #ffffff;
+    --text-main: #2c3e50;
+    --text-muted: #555555;
+    --color-primary: #2e7d32; /* Verde Agro */
+    --color-secondary: #1565c0; /* Azul Sustentabilidade */
+    --color-accent: #81c784;
+    --header-bg: #ffffff;
+    --border-color: #dddddd;
+    --transition-speed: 0.3s;
+}
 
+/* Variáveis para o Modo Escuro */
+[data-theme="dark"] {
+    --bg-primary: #121212;
+    --bg-card: #1e1e1e;
+    --text-main: #e0e0e0;
+    --text-muted: #b0b0b0;
+    --color-primary: #4caf50;
+    --color-secondary: #64b5f6;
+    --header-bg: #1f1f1f;
+    --border-color: #333333;
+}
+
+/* ==========================================================================
+   2. RESETS E CONFIGURAÇÕES GERAIS
+   ========================================================================== */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+    background-color: var(--bg-primary);
+    color: var(--text-main);
+    transition: background-color var(--transition-speed), color var(--transition-speed);
+    line-height: 1.6;
+}
+
+.container {
+    width: 90%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 40px 0;
+}
+
+.container-small {
+    width: 90%;
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 40px 0;
+}
+
+/* ==========================================================================
+   3. CABEÇALHO E NAVEGAÇÃO (Flexbox)
+   ========================================================================== */
+.main-header {
+    background-color: var(--header-bg);
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    transition: background-color var(--transition-speed);
+}
+
+.header-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 90%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 15px 0;
+}
+
+.logo h1 {
+    font-size: 1.5rem;
+    color: var(--text-main);
+}
+
+.logo h1 span {
+    color: var(--color-primary);
+}
+
+.main-nav ul {
+    display: flex;
+    list-style: none;
+    gap: 20px;
+}
+
+.main-nav a {
+    text-decoration: none;
+    color: var(--text-main);
+    font-weight: 600;
+    transition: color var(--transition-speed);
+}
+
+.main-nav a:hover {
+    color: var(--color-primary);
+}
+
+/* Botão Dark Mode */
+.btn-mode {
+    background: var(--color-primary);
+    color: white;
+    border: none;
+    padding: 8px 15px;
+    border-radius: 20px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: transform var(--transition-speed), background var(--transition-speed);
+}
+
+.btn-mode:hover {
+    transform: scale(1.05);
+    background: var(--color-secondary);
+}
+
+/* ==========================================================================
+   4. SEÇÃO HERO (BANNER LUMINOSO/IMAGEM)
+   ========================================================================== */
+.hero-section {
+    background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.6)), 
+                url('https://images.unsplash.com/photo-1500937386664-56d15ef3752d?auto=format&fit=crop&w=1600&q=80') center/cover no-repeat;
+    height: 60vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    color: white;
+    padding: 0 20px;
+}
+
+.hero-content h2 {
+    font-size: 2.5rem;
+    margin-bottom: 15px;
+    animation: fadeInDown 1s ease;
+}
+
+.hero-content p {
+    font-size: 1.2rem;
+    max-width: 800px;
+    margin: 0 auto 25px auto;
+    animation: fadeInUp 1s ease;
+}
+
+.btn-primary {
+    background-color: var(--color-primary);
+    color: white;
+    border: none;
+    padding: 12px 30px;
+    font-size: 1rem;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background var(--transition-speed), transform var(--transition-speed);
+}
+
+.btn-primary:hover {
+    background-color: #256329;
+    transform: translateY(-2px);
+}
+
+/* ==========================================================================
+   5. MENSAGEM DINÂMICA
+   ========================================================================== */
+.card-mensagem {
+    background-color: var(--bg-card);
+    border-left: 5px solid var(--color-secondary);
+    padding: 20px;
+    border-radius: 0 8px 8px 0;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+    text-align: center;
+    font-style: italic;
+    transition: background-color var(--transition-speed);
+}
+
+/* ==========================================================================
+   6. SEÇÃO PILARES (Grelha Flexbox Responsiva)
+   ========================================================================== */
+.section-title {
+    text-align: center;
+    font-size: 2rem;
+    margin-bottom: 30px;
+    position: relative;
+}
+
+.section-title::after {
+    content: '';
+    display: block;
+    width: 60px;
+    height: 4px;
+    background-color: var(--color-primary);
+    margin: 8px auto 0 auto;
+    border-radius: 2px;
+}
+
+.flex-grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 30px;
+    justify-content: center;
+}
+
+.pilar-card {
+    background-color: var(--bg-card);
+    border-radius: 8px;
+    overflow: hidden;
+    flex: 1 1 calc(33.333% - 30px);
+    min-width: 280px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+    transition: transform var(--transition-speed), box-shadow var(--transition-speed), background-color var(--transition-speed);
+}
+
+.pilar-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 10px 20px rgba(0,0,0,0.15);
+}
+
+.pilar-card img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+}
+
+.pilar-card h4 {
+    padding: 15px 20px 5px 20px;
+    font-size: 1.25rem;
+    color: var(--color-primary);
+}
+
+.pilar-card p {
+    padding: 0 20px 20px 20px;
+    color: var(--text-muted);
+}
+
+/* ==========================================================================
+   7. FORMULÁRIO DE CONTATO
+   ========================================================================== */
+.contato-section {
+    background-color: var(--bg-card);
+    transition: background-color var(--transition-speed);
+    border-top: 1px solid var(--border-color);
+}
+
+.contato-section h3 {
+    font-size: 1.75rem;
+    margin-bottom: 10px;
+    text-align: center;
+}
+
+.contato-section p {
+    text-align: center;
+    color: var(--text-muted);
+    margin-bottom: 25px;
+}
+
+.form-group {
+    margin-bottom: 15px;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: 600;
+}
+
+.form-group input {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid var(--border-color);
+    border-radius: 4px;
+    background-color: var(--bg-primary);
+    color: var(--text-main);
+    transition: border var(--transition-speed);
+}
+
+.form-group input:focus {
+    outline: none;
+    border-color: var(--color-primary);
+}
+
+.btn-submit {
+    width: 100%;
+    background-color: var(--color-secondary);
+    color: white;
+    border: none;
+    padding: 12px;
+    font-size: 1rem;
+    font-weight: bold;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background var(--transition-speed);
+}
+
+.btn-submit:hover {
+    background-color: #0d47a1;
+}
+
+/* Feedback do Formulário */
+.feedback-msg {
+    margin-top: 15px;
+    padding: 10px;
+    border-radius: 4px;
+    text-align: center;
+    font-weight: bold;
+    display: none; /* Controlado via JS */
+}
+
+.feedback-success {
+    background-color: #c8e6c9;
+    color: #2e7d32;
+}
+
+.feedback-error {
+    background-color: #ffcdd2;
+    color: #c62828;
+}
+
+/* ==========================================================================
+   8. RODAPÉ
+   ========================================================================== */
+.main-footer {
+    background-color: #1b5e20;
+    color: #ffffff;
+    text-align: center;
+    padding: 20px 0;
+    font-size: 0.9rem;
+}
+
+/* ==========================================================================
+   9. ANIMAÇÕES CRUAS (KEYFRAMES)
+   ========================================================================== */
+@keyframes fadeInDown {
+    from { opacity: 0; transform: translateY(-20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes fadeInUp {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+/* ==========================================================================
+   10. MEDIA QUERIES (Responsividade para Tablets e Celulares)
+   ========================================================================== */
+@media (max-width: 768px) {
+    .header-container {
+        flex-direction: column;
+        gap: 15px;
+        text-align: center;
+    }
+
+    .hero-section {
+        height: auto;
+        padding: 60px 20px;
+    }
+
+    .hero-content h2 {
+        font-size: 2rem;
+    }
+
+    .pilar-card {
+        flex: 1 1 calc(50% - 30px); /* 2 Colunas em Tablets */
+    }
+}
+
+@media (max-width: 480px) {
+    .main-nav ul {
+        flex-direction: column;
+        align-items: center;
+        gap: 10px;
+    }
+
+    .pilar-card {
+        flex: 1 1 100%; /* 1 Coluna em Celulares */
+    }
+}
